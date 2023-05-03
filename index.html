@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>YouVersion Extension Pack</title>
-	</head>
-	<body>
-		<div id="root"></div>
-		<script type="module" src="/src/popup.tsx"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouVersion Extension Pack</title>
+    <link rel="stylesheet" href="./public/styles/verse.css" />
+  </head>
+  <body>
+    <div class="contain">
+      <div class="header">
+        <div class="nav-header">
+          <div class="nav-img">
+            <img
+              src="./img/8cc4221aa12c4005ba8a43a3aa484447.jpg"
+              width="70px"
+              alt="jesu"
+            />
+          </div>
+          <div class="nav-button">
+            <button>Verse of the day</button>
+            <button>Lịch đọc KT Chiến Thắng</button>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="content-button">
+          <button>Download</button>
+          <button>Change background</button>
+        </div>
+        <div class="verse-content">
+          <div class="verse">
+            <quote id="content-verse"
+              >Vậy anh em hãy khich lệ nhau và xây dựng nhau, như anh em vẫn
+              làm</quote
+            >
+            <div class="verse-add">verse-add</div>
+          </div>
+        </div>
+
+        <div class="watermark">
+          <button>watermark</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/popup.tsx"></script>
+  </body>
 </html>
