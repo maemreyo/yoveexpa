@@ -1,16 +1,31 @@
 {
-	"name": "YouVersion",
-	"description": "",
+	"name": "YouVersion Pack",
+	"description": "Add a new WebUI when opening a new tab",
 	"version": "0.0.1",
 	"manifest_version": 3,
+	"web_accessible_resources": [
+		{
+			"resources": [
+				"src/assets/**"
+			],
+			"matches": ["<all_urls>"]
+		}
+	],
+	"chrome_url_overrides": {
+		"newtab": "index.html"
+	},
 	"action": {
-		"default_popup": "index.html",
+		"default_popup": "popup.html",
 		"default_title": "Open YouVersion"
 	},
 	"content_scripts": [
 		{
-			"matches": ["<all_urls>"],
-			"js": ["src/content_scripts/content_script.tsx"]
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"src/content_scripts/content_script.tsx"
+			]
 		}
 	],
 	"background": {
@@ -20,10 +35,7 @@
 	"options_page": "options.html",
 	"permissions": [
 		"background",
-		"contextMenus",
-		"bookmarks",
 		"tabs",
-		"storage",
-		"history"
+		"storage"
 	]
 }

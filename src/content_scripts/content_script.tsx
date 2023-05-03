@@ -19,6 +19,6 @@ document.body.appendChild(index);
 
 ReactDOM.createRoot(index).render(
 	<React.StrictMode>
-		<ContentScript />
+		{/* <ContentScript /> */}
 	</React.StrictMode>
 );
