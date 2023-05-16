@@ -5,9 +5,9 @@ import manifest from "./manifest.json";
 import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
-	plugins: [
-		svgr(),
-		react(),
-		crx({ manifest: manifest as unknown as ManifestV3Export }),
-	],
+    plugins: [
+        svgr(),
+        react(),
+        crx({ manifest: manifest as unknown as ManifestV3Export }),
+    ],
 });

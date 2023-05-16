@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import ScrapingHandler from "./providers/ScrapingHandler";
-
-const verseDayUrl = "https://oneway.vn/kinh-thanh";
+import "./index.css";
+import StorageHandler from "./providers/StorageHandler";
+import { VERSE_KEY } from "./utils/constant";
 
 function Main() {
     const [verseOfDay, setVerseOfDay] = useState<{
@@ -11,27 +11,15 @@ function Main() {
     } | null>(null);
 
     useEffect(() => {
-        const fetchVerseAndParse = async (url: string) => {
-            const scrapingHandler = new ScrapingHandler(verseDayUrl);
-            const selector = await scrapingHandler.loadSelector();
-
-            const verse = selector("div.quote-bible").first();
-            const address = selector("div.bible-to-day").find("p");
-
-            setVerseOfDay({
-                verse: verse.text(),
-                address: address.text(),
-            });
-        };
-
-        fetchVerseAndParse(verseDayUrl);
+        const storageHandler = new StorageHandler()
+        storageHandler.get(VERSE_KEY, (verseData) => setVerseOfDay(verseData))
     }, []);
 
     return (
         <div className="App" style={{ height: 300, width: 300 }}>
             {verseOfDay?.verse}
             <br />
-			{verseOfDay?.address}
+            {verseOfDay?.address}
         </div>
     );
 }

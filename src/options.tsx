@@ -9,7 +9,7 @@ function Options() {
 		<div className="App">
 			<header className="App-header">
 				<h1>Title</h1>
-				<Button>button</Button>
+				<button>button</button>
 			</header>
 		</div>
 	);

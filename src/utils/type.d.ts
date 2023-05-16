@@ -21,3 +21,16 @@ export interface BibleVerse {
     book_id: string;
     book_name: string;
 }
+
+export type Verse = {
+    number: number;
+    content: string;
+};
+export type Address = string;
+
+export type RawVerse = {
+    verse: Verse[];
+    address: Address;
+};
+
+export type Key = string;
